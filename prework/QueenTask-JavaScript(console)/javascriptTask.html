@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queen Position Moving Task</title>
+</head>
+
+<body>
+    <script>
+        let positionLog = [
+            ["a0", "b0", "c0", "d0", "e0", "f0", "g0", "h0"],
+            ["a1", "b1", "c1", "d1", "e1", "f1", "g1", "h1"],
+            ["a2", "b2", "c2", "d2", "e2", "f2", "g2", "h2"],
+            ["a3", "b3", "c3", "d3", "e3", "f3", "g3", "h3"],
+            ["a4", "b4", "c4", "d4", "e4", "f4", "g4", "h4"],
+            ["a5", "b5", "c5", "d5", "e5", "f5", "g5", "h5"],
+            ["a6", "b6", "c6", "d6", "e6", "f6", "g6", "h6"],
+            ["a7", "b7", "c7", "d7", "e7", "f7", "g7", "h7"]
+        ];
+        let board = [
+            ["a0", "b0", "c0", "QUEEN", "e0", "f0", "g0", "h0"],
+            ["a1", "b1", "c1", "d1", "e1", "f1", "g1", "h1"],
+            ["a2", "b2", "c2", "d2", "e2", "f2", "g2", "h2"],
+            ["a3", "b3", "c3", "d3", "e3", "f3", "g3", "h3"],
+            ["a4", "b4", "c4", "d4", "e4", "f4", "g4", "h4"],
+            ["a5", "b5", "c5", "d5", "e5", "f5", "g5", "h5"],
+            ["a6", "b6", "c6", "d6", "e6", "f6", "g6", "h6"],
+            ["a7", "b7", "c7", "d7", "e7", "f7", "g7", "h7"]
+        ];
+        let coordinates = { RowNo: 0, ColumnNo: 3 };
+        let queen = { direction: "South", position: coordinates, whereabouts: [] };
+        let inputData = prompt("Please Enter the Input:");
+
+        function readInput() {
+            if (inputData != null) {
+                return inputData;
+            }
+            else
+                document.write("No input");
+        }
+
+        function changeDirection(direction) {
+            direction = direction.toLowerCase();
+            switch (direction) {
+                case "s":
+                    queen.direction = "South";
+                    break;
+                case "n":
+                    queen.direction = "North";
+                    break;
+                case "w":
+                    queen.direction = "West";
+                    break;
+                case "e":
+                    queen.direction = "East";
+                    break;
+                case "sw":
+                    queen.direction = "SouthWest";
+                    break;
+                case "se":
+                    queen.direction = "SouthEast";
+                    break;
+                case "nw":
+                    queen.direction = "NorthWest";
+                    break;
+                case "ne":
+                    queen.direction = "NorthEast";
+                    break;
+                default:
+                    status = "invalid";
+                    break;
+            }
+        }
+
+
+
+        function moveSouth(NumberOfSteps) {
+            board[queen.position.RowNo][queen.position.ColumnNo] = positionLog[queen.position.RowNo][queen.position.ColumnNo];
+            queen.position.RowNo += NumberOfSteps;
+            board[queen.position.RowNo][queen.position.ColumnNo] = "QUEEN";
+        }
+
+        function moveNorth(NumberOfSteps) {
+            board[queen.position.RowNo][queen.position.ColumnNo] = positionLog[queen.position.RowNo][queen.position.ColumnNo];
+            queen.position.RowNo -= NumberOfSteps;
+            board[queen.position.RowNo][queen.position.ColumnNo] = "QUEEN";
+        }
+
+        function moveWest(NumberOfSteps) {
+            board[queen.position.RowNo][queen.position.ColumnNo] = positionLog[queen.position.RowNo][queen.position.ColumnNo];
+            queen.position.ColumnNo -= NumberOfSteps;
+            board[queen.position.RowNo][queen.position.ColumnNo] = "QUEEN";
+        }
+
+        function moveEast(NumberOfSteps) {
+            board[queen.position.RowNo][queen.position.ColumnNo] = positionLog[queen.position.RowNo][queen.position.ColumnNo];
+            queen.position.ColumnNo += NumberOfSteps
+            board[queen.position.RowNo][queen.position.ColumnNo] = "QUEEN";
+        }
+
+        function move(NumberOfSteps) {
+            if (queen.direction == "South") {
+                moveSouth(NumberOfSteps);
+            }
+            if (queen.direction == "North") {
+                moveNorth(NumberOfSteps);
+            }
+            if (queen.direction == "West") {
+                moveWest(NumberOfSteps);
+            }
+            if (queen.direction == "East") {
+                moveEast(NumberOfSteps);
+            }
+            if (queen.direction == "SouthWest") {
+                moveSouth(NumberOfSteps);
+                moveWest(NumberOfSteps);
+            }
+            if (queen.direction == "SouthEast") {
+                moveSouth(NumberOfSteps);
+                moveEast(NumberOfSteps);
+            }
+            if (queen.direction == "NorthWest") {
+                moveNorth(NumberOfSteps);
+                moveWest(NumberOfSteps);
+            }
+            if (queen.direction == "NorthEast") {
+                moveNorth(NumberOfSteps);
+                moveEast(NumberOfSteps);
+            }
+        }
+
+        function printArray() {
+            for (let i = 0; i < 8; i++) {
+                document.write("[");
+                for (let j = 0; j < 8; j++) {
+                    document.write(board[i][j] + ",");
+                }
+                document.write("],");
+                document.write("<br>");
+            }
+            document.write("<br>");
+        }
+
+        //Execution steps
+        let input, Direction, NumberOfSteps;
+        input = readInput();
+        document.write("ENTERED INPUT:" + input);
+        document.write("<br>");
+        let listData = input.split(" ");
+        for (let m = 0; m < listData.length; m++) {
+            if (listData[m].length == 2) {
+                Direction = listData[m].slice(0, 1);
+                NumberOfSteps = listData[m].slice(1, 2);
+            }
+            else {
+                Direction = listData[m].slice(0, 2);
+                NumberOfSteps = listData[m].slice(2, 3);
+            }
+            document.write("Before<br>");
+            printArray();
+            changeDirection(Direction);
+            move(parseInt(NumberOfSteps));
+            document.write("After<br>");
+            printArray();
+        }
+    </script>
+</body>
+
+</html>

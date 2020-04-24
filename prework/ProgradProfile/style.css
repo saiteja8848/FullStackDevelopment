@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital@1&display=swap');
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    background:#edeef0;
+}
+
+
+
+/*header or home*/
+nav ul{
+    display:flex;
+    justify-content: space-between;
+    padding-top: 5px;
+}
+nav ul li{
+    list-style: none;
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+.nav-link{
+    text-decoration: none;
+}
+.logo-text{
+    color: orangered;
+}
+
+/*home*/
+header{
+    background: black;
+    color: white;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    padding-bottom:80px;
+}
+
+/*bio*/
+#bio{
+    display:flex;
+    padding-top:20px;
+    padding-bottom: 40px;
+}
+#bio img{
+    height:210px;
+    width:210px;
+    border-radius: 45%;
+    margin-left:20px;
+    padding:10px;
+}
+#bio article{
+    padding-left:50px;
+    padding-right:20px;
+}
+
+.break{
+    margin:10px;
+}
+
+/*portfolio*/
+#portfolio{ 
+    background: black;
+    color: white;
+    padding-top:50px;
+    padding-left:50px;
+     padding-bottom:30px;
+    text-align: center;   
+}
+
+#portfolio div article img{
+    width:50px;
+    height:50px;
+    padding-left:10px;
+}
+
+#portfolio div article{
+    background:white;
+    color:black;
+    height:140px;
+    width:200px;
+    align-items: center;
+    border-radius:2%;
+}
+#portfolio h3 p{
+ text-align: center;
+}
+#portfolio div {
+   display:flex;
+   justify-content: space-around;
+   padding-top:20px;
+   padding-bottom:40px;
+   text-align: center; 
+}
+
+/*skills*/
+#skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom:20px;
+}
+#skills-container{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+}
+#skills-container h4{
+    text-align: center;
+}
+#skills ul{
+    list-style: none;
+}
+#skills ul li{
+    margin:5px 0px;
+}
+* ui{
+    list-style: none;
+}
+
+/*footer or contact */
+#contact{
+  background: black;
+  color: white;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  padding:30px;
+  margin-top:0px; 
+}
+#details input{
+    margin:20px;
+}
+.change{
+    padding-left:80px;
+    padding-right:50px;
+    text-align: center;
+}
+#send{
+    margin-left:50%
+}
+.nav-link:hover{
+    text-decoration: underline;
+    color:orangered;
+}
