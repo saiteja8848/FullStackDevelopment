@@ -1,0 +1,166 @@
+/*body*/
+body{
+    background-color: yellow;
+    margin: 0;
+    font-family: 'AvenirNext','Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+
+#leftArrow{
+    
+    border:1px solid black;
+}
+
+
+/* navigation */
+.nav-link{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+nav ul li img {
+    height: 25px;
+    width: 25px;
+}
+nav ul{
+    display: flex;
+    align-content: space-between;
+    background:white;
+    margin-top:0px;
+    padding-top:10px;
+    padding-bottom:7px;
+    padding-left: 130px;
+}
+nav ul li{
+    list-style: none;
+    padding-left:20px; 
+}
+
+
+
+
+/*two*/
+#home p{
+    font-size: 4em;
+    text-align: center;
+}
+
+
+
+
+#logo-images {
+    display: flex;
+    padding-left:130px;
+}
+
+#logo-images img{
+    height:250px;
+    width:350px;
+}
+
+#logo-text{
+    display: flex;
+    padding-left:130px;
+}
+
+#logo-text img{
+    height:45px;
+    width:350px;
+}
+
+#logo-paragraph{
+    display: flex;
+}
+
+#logo-paragraph p{
+    font-size:1em;
+    padding-bottom:60px;
+    padding-left:220px;
+}
+
+#button{
+ display: flex;
+ justify-content: center;
+   padding-top:50px;
+  padding-bottom: 90px;
+}
+
+.button1{
+    background: white; 
+    border:none;
+    color: black;
+    padding:12px 40px; 
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 24px;
+}
+
+#stores{
+    display: inline;
+    margin-left:85%;
+    padding-bottom: 0px;
+    
+}
+
+#stores img{
+   height: 40px;
+   width: 90px;
+   border-radius: 2%;
+}
+
+
+
+/*support href links*/
+
+#support-container{
+    background: white;
+    color: black;
+    display:flex;    
+}
+
+
+#support-container div table {  
+    padding:80px 0px 50px 180px;
+    float:left;
+}
+
+
+
+
+/*footer*/
+a{
+    text-decoration: none;
+}
+
+#foot-container{
+   background:black;
+   text-decoration-color: white; 
+   margin-top: 0px;   
+   padding-top:10px;
+   padding-bottom: 5px;
+   padding-left:50px;
+}
+
+#foot-container ul {
+    display: flex;
+    
+}
+
+#foot-container ul li{
+    padding-left:35px;
+}
+
+ul li{
+    list-style: none;
+}
+
+
+@media screen and (max-width: 900px){
+    nav ul{
+        background-color: magenta;
+    }
+}
