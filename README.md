@@ -1,2 +1,2 @@
 # FullStackDevelopment
-Learning Full Stack Development using Java
+ learning basics of html,css and javascript
